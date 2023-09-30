@@ -10,8 +10,8 @@ use Illuminate\Routing\Controller as BaseController;
     /**
      * @OA\Info(
      *      version="1.0.0",
-     *      title="Veiculo registrar e consultar",
-     *      description="registra e consulta veiculos",
+     *      title="Veiculo (registrar e consultar)",
+     *      description="register and consult vehicles",
      *      @OA\Contact(
      *          email="admin@admin.com"
      *      ),
@@ -25,12 +25,7 @@ use Illuminate\Routing\Controller as BaseController;
      *      url=L5_SWAGGER_CONST_HOST,
      *      description="Demo API Server"
      * )
-
      *
-     * @OA\Tag(
-     *     name="Projects",
-     *     description="API Endpoints of Projects"
-     * )
      */
 
 class Controller extends BaseController

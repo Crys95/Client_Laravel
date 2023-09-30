@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Veiculo registrar e consultar",
-        "description": "registra e consulta veiculos",
+        "title": "Veiculo (registrar e consultar)",
+        "description": "register and consult vehicles",
         "contact": {
             "email": "admin@admin.com"
         },
@@ -201,11 +201,5 @@
                 }
             }
         }
-    },
-    "tags": [
-        {
-            "name": "Projects",
-            "description": "API Endpoints of Projects"
-        }
-    ]
+    }
 }
