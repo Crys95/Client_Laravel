@@ -21,8 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('veiculos')->group(function () {
     Route::get('/', [VehicleController::class, 'index']); 
-    Route::post('/', 'VeiculoController@store'); 
-    Route::get('/{id}', 'VeiculoController@show'); 
+    Route::post('/vehicle-create', [VehicleController::class, 'store']);
+    Route::get('/vehicle-consultation', [VehicleController::class, 'plate']);
+    Route::delete('/vehicle-delete', [VehicleController::class, 'delete']);
+    Route::put('/vehicle-update', [VehicleController::class, 'update']);
 });
 
 Route::get('/', function () {

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class CadastroVeiculoRequest extends FormRequest
 {
@@ -13,7 +15,7 @@ class CadastroVeiculoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -43,5 +45,10 @@ class CadastroVeiculoRequest extends FormRequest
             'numero_eixos.required'    => 'numero_eixos é um campo requerido',
             'cor.required'             => 'cor é um campo requerido',
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json(['errors' => $validator->errors()],422));
     }
 }
