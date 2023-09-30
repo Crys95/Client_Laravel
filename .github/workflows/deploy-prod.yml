@@ -1,0 +1,44 @@
+# This workflow
+#
+
+name: Deploy-Production
+
+on:
+ workflow_dispatch:
+ push:
+        branches:
+         - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      # Git clone do repositório em $GITHUB_WORKSPACE para a
+      - uses: actions/checkout@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }} # O segredo deve exisitr
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+  ## Build DockerFile
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.3.0
+        with:
+          # Contexto onde está o arquivo Dockerfile, normalmente é .
+          context: .
+          file: DockerFile-production
+          # Qual a tag
+          tags: sairan/api-vehicle-crystyan:latest
+          no-cache: true
+          push: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          webhook_url: ${{secrets.WEB_HOOK_DOCKER_URL}}
+          webhook_secret: "Y0uR5ecr3t"
+          verify_ssl: false
+

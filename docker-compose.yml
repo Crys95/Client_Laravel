@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+    api-veiculo:
+        container_name: api-veiculo
+        build: .
+        ports:
+            - 3002:3002
+        restart: always
+        extra_hosts:
+            - mysql:127.0.0.1
+        volumes:
+            - .:/app/api-veiculo
+            - vendor-api-veiculo:/app/api-veiculo/vendor
+
+volumes:
+  vendor-api-veiculo:
+   name: vendor-api-veiculo
+
+
+
+
+
+

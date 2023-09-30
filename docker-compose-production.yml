@@ -1,0 +1,28 @@
+version: "3.1"
+
+services:
+  app:
+    image: sairan/api-vehicle-crystyan:latest
+    hostname: ctl-nao-conformidade
+    networks:
+    - control-production
+    deploy:
+        replicas: 1
+        update_config:
+                parallelism: 1
+                delay: 10s
+        restart_policy:
+                condition: on-failure
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 15s
+    ports:
+      - 3002:3002
+    env_file:
+     - env-production
+
+networks:
+  control-production:
+    external: true
+
+
