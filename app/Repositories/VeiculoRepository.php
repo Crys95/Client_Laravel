@@ -25,7 +25,7 @@ class VeiculoRepository
     {
         $query = $this->VeiculoModel->where('placa', $data['placa'])->first();
 
-        if($query){
+        if ($query) {
             $res = [
                 'message' => 'placa ja cadastrada',
                 'success' => false
@@ -33,15 +33,15 @@ class VeiculoRepository
             return response()->json($res, 400);
         }
         $create = $this->VeiculoModel->create($data);
-        
+
         return response()->json($create, 201);
     }
-    public function boardVehicle(string $plate) 
+    public function boardVehicle(string $plate)
     {
         return $this->VeiculoModel->where('placa', $plate)->first();
     }
 
-    public function deleteVehicle(string $plate) 
+    public function deleteVehicle(string $plate)
     {
         return $this->VeiculoModel->where('placa', $plate)->delete();
     }
@@ -50,7 +50,7 @@ class VeiculoRepository
     {
         $query = $this->VeiculoModel->where('placa', $plate)->first();
 
-        if(!$query){
+        if (!$query) {
             $res = [
                 'message' => 'veiculo não encontrado',
                 'success' => false
@@ -59,7 +59,7 @@ class VeiculoRepository
         }
 
         $query->update($data);
-        
+
         $res = [
             'message' => 'veiculo editado com sucesso',
             'success' => true

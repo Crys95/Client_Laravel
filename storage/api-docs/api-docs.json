@@ -1,0 +1,211 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Veiculo registrar e consultar",
+        "description": "registra e consulta veiculos",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "/api/vehicle": {
+            "get": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Get list of vehicle",
+                "description": "consulta lista de veiculo",
+                "operationId": "index",
+                "responses": {
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/vehicle/vehicle-create": {
+            "post": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "register vehicle",
+                "description": "registra o veiculo",
+                "operationId": "store",
+                "parameters": [
+                    {
+                        "name": "placa",
+                        "in": "query",
+                        "description": "informe a placa",
+                        "required": true
+                    },
+                    {
+                        "name": "marca",
+                        "in": "query",
+                        "description": "informe a marca",
+                        "required": true
+                    },
+                    {
+                        "name": "modelo",
+                        "in": "query",
+                        "description": "informe o modelo",
+                        "required": true
+                    },
+                    {
+                        "name": "ano_fabricacao",
+                        "in": "query",
+                        "description": "informe o ano_fabricacao",
+                        "required": true
+                    },
+                    {
+                        "name": "numero_eixos",
+                        "in": "query",
+                        "description": "informe o numero_eixos",
+                        "required": true
+                    },
+                    {
+                        "name": "cor",
+                        "in": "query",
+                        "description": "informe a cor",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/vehicle/vehicle-consultation": {
+            "get": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "check vehicle",
+                "description": "consulta individual de veiculo",
+                "operationId": "plate",
+                "parameters": [
+                    {
+                        "name": "placa",
+                        "in": "query",
+                        "description": "informe a placa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/vehicle/vehicle-delete": {
+            "delete": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "delete vehicle",
+                "description": "excluir o veiculo",
+                "operationId": "delete",
+                "parameters": [
+                    {
+                        "name": "placa",
+                        "in": "query",
+                        "description": "informe a placa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/vehicle/vehicle-update": {
+            "put": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "update vehicle",
+                "description": "Atualiza o veiculo",
+                "operationId": "update",
+                "parameters": [
+                    {
+                        "name": "placa",
+                        "in": "query",
+                        "description": "informe a placa",
+                        "required": true
+                    },
+                    {
+                        "name": "marca",
+                        "in": "query",
+                        "description": "informe a marca",
+                        "required": false
+                    },
+                    {
+                        "name": "modelo",
+                        "in": "query",
+                        "description": "informe o modelo",
+                        "required": false
+                    },
+                    {
+                        "name": "ano_fabricacao",
+                        "in": "query",
+                        "description": "informe o ano_fabricacao",
+                        "required": false
+                    },
+                    {
+                        "name": "numero_eixos",
+                        "in": "query",
+                        "description": "informe o numero_eixos",
+                        "required": false
+                    },
+                    {
+                        "name": "cor",
+                        "in": "query",
+                        "description": "informe a cor",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Projects"
+        }
+    ]
+}

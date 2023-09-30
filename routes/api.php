@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('veiculos')->group(function () {
+Route::prefix('vehicle')->group(function () {
     Route::get('/', [VehicleController::class, 'index']); 
     Route::post('/vehicle-create', [VehicleController::class, 'store']);
     Route::get('/vehicle-consultation', [VehicleController::class, 'plate']);
