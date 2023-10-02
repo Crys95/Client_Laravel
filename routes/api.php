@@ -26,7 +26,6 @@ Route::prefix('vehicle')->group(function () {
     Route::delete('/vehicle-delete', [VehicleController::class, 'delete']);
     Route::put('/vehicle-update', [VehicleController::class, 'update']);
 });
-
 Route::get('/', function () {
     return response()->json(['message' => 'OK']);
 });
