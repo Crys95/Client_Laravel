@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\ClientRepository;
+use App\Repositories\ClientRepositories;
 
 class ClientService
 {
 
     private $repository;
 
-    public function __construct(ClientRepository $repository)
+    public function __construct(ClientRepositories $repository)
     {
         $this->repository = $repository;
     }

@@ -20,14 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('vehicle')->group(function () {
-    Route::get('/', [VehicleController::class, 'index']); 
-    Route::post('/vehicle-create', [VehicleController::class, 'store']);
-    Route::get('/vehicle-consultation', [VehicleController::class, 'plate']);
-    Route::delete('/vehicle-delete', [VehicleController::class, 'delete']);
-    Route::put('/vehicle-update', [VehicleController::class, 'update']);
-});
-
 Route::prefix('client')->group(function () {
     Route::get('/', [ClientController::class, 'index']); 
     Route::post('/client-create', [ClientController::class, 'store']);
@@ -37,5 +29,5 @@ Route::prefix('client')->group(function () {
 });
 
 Route::get('/', function () {
-    return response()->json(['message' => 'OK']);
+    return response()->json(['message' => 'ok']);
 });

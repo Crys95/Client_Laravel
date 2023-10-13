@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Veiculo (registrar e consultar)",
-        "description": "register and consult vehicles",
+        "title": "Client (register and consult)",
+        "description": "register and consult client",
         "contact": {
             "email": "admin@admin.com"
         },
@@ -19,13 +19,13 @@
         }
     ],
     "paths": {
-        "/api/vehicle": {
+        "/api/client": {
             "get": {
                 "tags": [
-                    "vehicle"
+                    "client"
                 ],
-                "summary": "Get list of vehicle",
-                "description": "consulta lista de veiculo",
+                "summary": "Get list of client",
+                "description": "consulta lista de cliente",
                 "operationId": "index",
                 "responses": {
                     "401": {
@@ -37,49 +37,49 @@
                 }
             }
         },
-        "/api/vehicle/vehicle-create": {
+        "/api/client/client-create": {
             "post": {
                 "tags": [
-                    "vehicle"
+                    "client"
                 ],
-                "summary": "register vehicle",
-                "description": "registra o veiculo",
+                "summary": "register client",
+                "description": "registra o cliente",
                 "operationId": "store",
                 "parameters": [
                     {
-                        "name": "placa",
+                        "name": "cpf",
                         "in": "query",
-                        "description": "informe a placa",
+                        "description": "informe o cpf",
                         "required": true
                     },
                     {
-                        "name": "marca",
+                        "name": "nome",
                         "in": "query",
-                        "description": "informe a marca",
+                        "description": "informe o nome",
                         "required": true
                     },
                     {
-                        "name": "modelo",
+                        "name": "sobrenome",
                         "in": "query",
-                        "description": "informe o modelo",
+                        "description": "informe o sobrenome",
                         "required": true
                     },
                     {
-                        "name": "ano_fabricacao",
+                        "name": "data_nascimento",
                         "in": "query",
-                        "description": "informe o ano_fabricacao",
+                        "description": "informe a data de nascimento",
                         "required": true
                     },
                     {
-                        "name": "numero_eixos",
+                        "name": "email",
                         "in": "query",
-                        "description": "informe o numero_eixos",
+                        "description": "informe o email",
                         "required": true
                     },
                     {
-                        "name": "cor",
+                        "name": "genero",
                         "in": "query",
-                        "description": "informe a cor",
+                        "description": "informe o genero",
                         "required": true
                     }
                 ],
@@ -93,19 +93,19 @@
                 }
             }
         },
-        "/api/vehicle/vehicle-consultation": {
+        "/api/client/client-consultation": {
             "get": {
                 "tags": [
-                    "vehicle"
+                    "client"
                 ],
-                "summary": "check vehicle",
-                "description": "consulta individual de veiculo",
+                "summary": "check client",
+                "description": "consulta individual do cliente",
                 "operationId": "plate",
                 "parameters": [
                     {
-                        "name": "placa",
+                        "name": "cpf",
                         "in": "query",
-                        "description": "informe a placa",
+                        "description": "informe o cpf",
                         "required": true
                     }
                 ],
@@ -119,19 +119,19 @@
                 }
             }
         },
-        "/api/vehicle/vehicle-delete": {
+        "/api/client/client-delete": {
             "delete": {
                 "tags": [
-                    "vehicle"
+                    "client"
                 ],
-                "summary": "delete vehicle",
-                "description": "excluir o veiculo",
+                "summary": "delete client",
+                "description": "excluir o cliente",
                 "operationId": "delete",
                 "parameters": [
                     {
-                        "name": "placa",
+                        "name": "cpf",
                         "in": "query",
-                        "description": "informe a placa",
+                        "description": "informe 0 cpf",
                         "required": true
                     }
                 ],
@@ -145,49 +145,49 @@
                 }
             }
         },
-        "/api/vehicle/vehicle-update": {
+        "/api/client/client-update": {
             "put": {
                 "tags": [
-                    "vehicle"
+                    "client"
                 ],
-                "summary": "update vehicle",
-                "description": "Atualiza o veiculo",
+                "summary": "update client",
+                "description": "Atualiza o cliente",
                 "operationId": "update",
                 "parameters": [
                     {
-                        "name": "placa",
+                        "name": "cpf",
                         "in": "query",
-                        "description": "informe a placa",
+                        "description": "informe o cpf",
                         "required": true
                     },
                     {
-                        "name": "marca",
+                        "name": "nome",
                         "in": "query",
-                        "description": "informe a marca",
+                        "description": "informe o nome",
                         "required": false
                     },
                     {
-                        "name": "modelo",
+                        "name": "sobrenome",
                         "in": "query",
-                        "description": "informe o modelo",
+                        "description": "informe o sobrenome",
                         "required": false
                     },
                     {
-                        "name": "ano_fabricacao",
+                        "name": "data_nascimento",
                         "in": "query",
-                        "description": "informe o ano_fabricacao",
+                        "description": "informe o data de nascimento",
                         "required": false
                     },
                     {
-                        "name": "numero_eixos",
+                        "name": "email",
                         "in": "query",
-                        "description": "informe o numero_eixos",
+                        "description": "informe o email",
                         "required": false
                     },
                     {
-                        "name": "cor",
+                        "name": "genero",
                         "in": "query",
-                        "description": "informe a cor",
+                        "description": "informe o genero",
                         "required": false
                     }
                 ],

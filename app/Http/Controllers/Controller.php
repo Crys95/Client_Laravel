@@ -10,8 +10,8 @@ use Illuminate\Routing\Controller as BaseController;
     /**
      * @OA\Info(
      *      version="1.0.0",
-     *      title="Veiculo (registrar e consultar)",
-     *      description="register and consult vehicles",
+     *      title="Client (register and consult)",
+     *      description="register and consult client",
      *      @OA\Contact(
      *          email="admin@admin.com"
      *      ),

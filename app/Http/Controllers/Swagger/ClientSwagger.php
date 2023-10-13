@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Swagger;
 
 use App\Http\Controllers\Controller;
 
-class VehicleSwagger extends Controller
+class ClientSwagger extends Controller
 {
     /**
      * @OA\Get(
-     *      path="/api/vehicle",
+     *      path="/api/client",
      *      operationId="index",
-     *      tags={"vehicle"},
-     *      summary="Get list of vehicle",
-     *      description="consulta lista de veiculo",
+     *      tags={"client"},
+     *      summary="Get list of client",
+     *      description="consulta lista de cliente",
      *  
      *      @OA\Response(
      *          response=401,
@@ -30,45 +30,45 @@ class VehicleSwagger extends Controller
 
     /**
      * @OA\Post(
-     *      path="/api/vehicle/vehicle-create",
+     *      path="/api/client/client-create",
      *      operationId="store",
-     *      tags={"vehicle"},
-     *      summary="register vehicle",
-     *      description="registra o veiculo",
+     *      tags={"client"},
+     *      summary="register client",
+     *      description="registra o cliente",
      *  @OA\Parameter(
-     *         name="placa",
+     *         name="cpf",
      *         in="query",
-     *         description="informe a placa",
+     *         description="informe o cpf",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="marca",
+     *         name="nome",
      *         in="query",
-     *         description="informe a marca",
+     *         description="informe o nome",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="modelo",
+     *         name="sobrenome",
      *         in="query",
-     *         description="informe o modelo",
+     *         description="informe o sobrenome",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="ano_fabricacao",
+     *         name="data_nascimento",
      *         in="query",
-     *         description="informe o ano_fabricacao",
+     *         description="informe a data de nascimento",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="numero_eixos",
+     *         name="email",
      *         in="query",
-     *         description="informe o numero_eixos",
+     *         description="informe o email",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="cor",
+     *         name="genero",
      *         in="query",
-     *         description="informe a cor",
+     *         description="informe o genero",
      *         required=true,
      *      ),
      *  
@@ -88,16 +88,16 @@ class VehicleSwagger extends Controller
 
     /**
      * @OA\Get(
-     *      path="/api/vehicle/vehicle-consultation",
+     *      path="/api/client/client-consultation",
      *      operationId="plate",
-     *      tags={"vehicle"},
-     *      summary="check vehicle",
-     *      description="consulta individual de veiculo",
+     *      tags={"client"},
+     *      summary="check client",
+     *      description="consulta individual do cliente",
      * 
      *  @OA\Parameter(
-     *         name="placa",
+     *         name="cpf",
      *         in="query",
-     *         description="informe a placa",
+     *         description="informe o cpf",
      *         required=true,
      *      ),
      *  
@@ -117,16 +117,16 @@ class VehicleSwagger extends Controller
 
     /**
      * @OA\Delete(
-     *      path="/api/vehicle/vehicle-delete",
+     *      path="/api/client/client-delete",
      *      operationId="delete",
-     *      tags={"vehicle"},
-     *      summary="delete vehicle",
-     *      description="excluir o veiculo",
+     *      tags={"client"},
+     *      summary="delete client",
+     *      description="excluir o cliente",
      * 
      *  @OA\Parameter(
-     *         name="placa",
+     *         name="cpf",
      *         in="query",
-     *         description="informe a placa",
+     *         description="informe 0 cpf",
      *         required=true,
      *      ),
      *  
@@ -146,45 +146,45 @@ class VehicleSwagger extends Controller
 
     /**
      * @OA\Put(
-     *      path="/api/vehicle/vehicle-update",
+     *      path="/api/client/client-update",
      *      operationId="update",
-     *      tags={"vehicle"},
-     *      summary="update vehicle",
-     *      description="Atualiza o veiculo",
+     *      tags={"client"},
+     *      summary="update client",
+     *      description="Atualiza o cliente",
      *  @OA\Parameter(
-     *         name="placa",
+     *         name="cpf",
      *         in="query",
-     *         description="informe a placa",
+     *         description="informe o cpf",
      *         required=true,
      *      ),
      *  @OA\Parameter(
-     *         name="marca",
+     *         name="nome",
      *         in="query",
-     *         description="informe a marca",
+     *         description="informe o nome",
      *         required=false,
      *      ),
      *  @OA\Parameter(
-     *         name="modelo",
+     *         name="sobrenome",
      *         in="query",
-     *         description="informe o modelo",
+     *         description="informe o sobrenome",
      *         required=false,
      *      ),
      *  @OA\Parameter(
-     *         name="ano_fabricacao",
+     *         name="data_nascimento",
      *         in="query",
-     *         description="informe o ano_fabricacao",
+     *         description="informe o data de nascimento",
      *         required=false,
      *      ),
      *  @OA\Parameter(
-     *         name="numero_eixos",
+     *         name="email",
      *         in="query",
-     *         description="informe o numero_eixos",
+     *         description="informe o email",
      *         required=false,
      *      ),
      *  @OA\Parameter(
-     *         name="cor",
+     *         name="genero",
      *         in="query",
-     *         description="informe a cor",
+     *         description="informe o genero",
      *         required=false,
      *      ),
      *  

@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class ClienteModel extends Model
 {
     use SoftDeletes;
-    protected $table = 'veiculos';
+    protected $table = 'client';
 
     protected $fillable = [
         'cpf',

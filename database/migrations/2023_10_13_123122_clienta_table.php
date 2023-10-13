@@ -19,8 +19,8 @@ class ClientaTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('nome')->nullable();
             $table->string('sobrenome')->nullable();
-            $table->integer('data_nascimento')->default(0);
-            $table->integer('email')->default(0);
+            $table->string('data_nascimento')->nullable();
+            $table->string('email')->nullable();
             $table->string('genero')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 use App\Models\ClienteModel;
 
-class ClientRepository
+class ClientRepositories
 {
 
     private $ClientModel;
