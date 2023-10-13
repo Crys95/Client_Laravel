@@ -47,12 +47,9 @@ class ClientService
 
     public function deleteClient(string $cpf)
     {
-        $this->repository->deleteClient($cpf);
-        $res = [
-            'message' => 'cpf deletado com sucesso',
-            'success' => true
-        ];
-        return $res;
+        $delete = $this->repository->deleteClient($cpf);
+
+        return $delete;
     }
 
     public function updateClient(array $data)

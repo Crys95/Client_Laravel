@@ -27,15 +27,15 @@ class ClientController extends Controller
         return $response;
     }
 
-    public function plate(Request $request)
+    public function consult(Request $request)
     {
-        $response = $this->service->boardClient($request->placa);
+        $response = $this->service->boardClient($request->cpf);
         return $response;
     }
 
     public function delete(Request $request)
     {
-        $response = $this->service->deleteClient($request->placa);
+        $response = $this->service->deleteClient($request->cpf);
         return $response;
     }
     public function update(Request $request)
