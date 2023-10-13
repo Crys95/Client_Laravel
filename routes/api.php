@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,15 @@ Route::prefix('vehicle')->group(function () {
     Route::delete('/vehicle-delete', [VehicleController::class, 'delete']);
     Route::put('/vehicle-update', [VehicleController::class, 'update']);
 });
+
+Route::prefix('client')->group(function () {
+    Route::get('/', [ClientController::class, 'index']); 
+    Route::post('/client-create', [ClientController::class, 'store']);
+    Route::get('/client-consultation', [ClientController::class, 'plate']);
+    Route::delete('/client-delete', [ClientController::class, 'delete']);
+    Route::put('/client-update', [ClientController::class, 'update']);
+});
+
 Route::get('/', function () {
     return response()->json(['message' => 'OK']);
 });
