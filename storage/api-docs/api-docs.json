@@ -129,9 +129,9 @@
                 "operationId": "delete",
                 "parameters": [
                     {
-                        "name": "cpf",
+                        "name": "id",
                         "in": "query",
-                        "description": "informe 0 cpf",
+                        "description": "informe o id",
                         "required": true
                     }
                 ],

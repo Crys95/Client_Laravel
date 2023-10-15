@@ -41,19 +41,12 @@ class ClientRepositories
         return $this->ClientModel->where('cpf', $cpf)->first();
     }
 
-    public function deleteClient(string $cpf)
+    public function deleteClient(string $id)
     {
-        $query = $this->ClientModel->where('cpf', $cpf)->first();
+        $query = $this->ClientModel->where('id', $id)->first();
 
-        if (!$query) {
-            $res = [
-                'message' => 'cpf não encontrado',
-                'success' => false
-            ];
-            return response()->json($res, 404);
-        }
     
-        $this->ClientModel->where('cpf', $cpf)->delete();
+        $this->ClientModel->where('id', $id)->delete();
 
         $res = [
             'message' => 'cpf deletado com sucesso',

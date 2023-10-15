@@ -35,7 +35,7 @@ class ClientController extends Controller
 
     public function delete(Request $request)
     {
-        $response = $this->service->deleteClient($request->cpf);
+        $response = $this->service->deleteClient($request->id);
         return $response;
     }
     public function update(Request $request)

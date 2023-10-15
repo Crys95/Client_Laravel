@@ -124,9 +124,9 @@ class ClientSwagger extends Controller
      *      description="excluir o cliente",
      * 
      *  @OA\Parameter(
-     *         name="cpf",
+     *         name="id",
      *         in="query",
-     *         description="informe 0 cpf",
+     *         description="informe o id",
      *         required=true,
      *      ),
      *  

@@ -45,9 +45,9 @@ class ClientService
         return response()->json($response, 200);
     }
 
-    public function deleteClient(string $cpf)
+    public function deleteClient(string $id)
     {
-        $delete = $this->repository->deleteClient($cpf);
+        $delete = $this->repository->deleteClient($id);
 
         return $delete;
     }
