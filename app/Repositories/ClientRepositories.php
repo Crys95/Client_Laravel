@@ -36,9 +36,9 @@ class ClientRepositories
 
         return response()->json($create, 201);
     }
-    public function boardClient(string $cpf)
+    public function boardClient(string $id)
     {
-        return $this->ClientModel->where('cpf', $cpf)->first();
+        return $this->ClientModel->where('id', $id)->first();
     }
 
     public function deleteClient(string $id)

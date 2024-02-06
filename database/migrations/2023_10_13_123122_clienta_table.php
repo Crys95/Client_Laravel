@@ -18,7 +18,7 @@ class ClientaTable extends Migration
             $table->uuid('identify')->nullable();
             $table->string('cpf')->nullable();
             $table->string('nome')->nullable();
-            $table->string('sobrenome')->nullable();
+            $table->string('telefone')->nullable();
             $table->string('data_nascimento')->nullable();
             $table->string('email')->nullable();
             $table->string('genero')->nullable();

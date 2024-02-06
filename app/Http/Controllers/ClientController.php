@@ -29,7 +29,7 @@ class ClientController extends Controller
 
     public function consult(Request $request)
     {
-        $response = $this->service->boardClient($request->cpf);
+        $response = $this->service->boardClient($request->id);
         return $response;
     }
 
@@ -43,4 +43,5 @@ class ClientController extends Controller
         $response = $this->service->updateClient($request->all());
         return $response;
     }
+
 }

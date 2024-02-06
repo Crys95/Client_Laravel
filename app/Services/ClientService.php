@@ -32,9 +32,9 @@ class ClientService
         return $response;
     }
 
-    public function boardClient(string $plate)
+    public function boardClient(string $id)
     {
-        $response = $this->repository->boardClient($plate);
+        $response = $this->repository->boardClient($id);
         if (!$response) {
             $res = [
                 'message' => 'cpf não encontrado',

@@ -28,7 +28,7 @@ class CadastroClientRequest extends FormRequest
         return [
             'cpf'           => ['required'],
             'nome'           => ['required'],
-            'sobrenome'          => ['required'],
+            'telefone'          => ['required'],
             'data_nascimento'  => ['required'],
             'email'    => ['required'],
             'genero'             => ['required'],
@@ -40,7 +40,7 @@ class CadastroClientRequest extends FormRequest
         return [
             'cpf.required'           => 'cpf é um campo requerido',
             'nome.required'           => 'nome é um campo requerido',
-            'sobrenome.required'          => 'sobrenome é um campo requerido',
+            'telefone.required'          => 'telefone é um campo requerido',
             'data_nascimento.required'  => 'data_nascimento é um campo requerido',
             'email.required'    => 'email é um campo requerido',
             'genero.required'             => 'genero é um campo requerido',
